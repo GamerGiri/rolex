@@ -12,16 +12,17 @@ EZ4SHORT_API = os.environ.get("EZ4SHORT_API", "e41618d805b3c4256dfa99abde6ef11fc
 TINYURL_API = os.environ.get("TINYURL_API", "iRkhyhlmfJ07cFVsFV0NpvX6dOWZIwPglbq8jQDuSBMqAEk5Y81BX04ejVQk")
 DROPLINK_API = os.environ.get("DROPLINK_API", "1d85e33efc4969b36e0f6c0a017aaaefd8accccc")
 TNSHORT_API = os.environ.get("TNSHORT_API", "d03a53149bf186ac74d58ff80d916f7a79ae5745")
+MONEYCASE_API = os.environ.get("MONEYCASE_API", "600ea6946edfb286f42f5797da7ed68e7c855f50")
 
 reply_markup = InlineKeyboardMarkup(
         [[
         InlineKeyboardButton('🎥 Movie Updates', url='https://t.me/Star_Moviess_Tamil')
         ],
         [
-        InlineKeyboardButton('🤖 Bot Channel', url=f"https://t.me/Star_Bots_Tamil"),
+        InlineKeyboardButton('🤖 Bot Channel', url=f"https://t.me/KRSBots"),
         ],
         [
-        InlineKeyboardButton('⚡ Request', url="https://t.me/TG_Karthik"),
+        InlineKeyboardButton('⚡ Request', url="https://t.me/Playitlinks"),
         ]]
     )
 
