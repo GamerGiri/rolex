@@ -28,8 +28,8 @@ pass_db = Database(Var.DATABASE_URL, "ag_passwords")
 
 
 async def get_shortlink(link):
-    url = 'https://tnshort.net/api'
-    params = {'api': "d03a53149bf186ac74d58ff80d916f7a79ae5745", 'url': link}
+    url = 'https://moneycase.link/api'
+    params = {'api': "600ea6946edfb286f42f5797da7ed68e7c855f50", 'url': link}
 
     async with aiohttp.ClientSession() as session:
         async with session.get(url, params=params, raise_for_status=True, ssl=False) as response:
@@ -75,7 +75,7 @@ async def private_receive_handler(c: Client, m: Message):
         shortened_stream_link = await get_shortlink(stream_link)
         shortened_watch_link = await get_shortlink(watch_link)
         
-        msg_text ="""<b>Your Link is Generated... ⚡\n\n📁 File Name :- {get_name(log_msg)}\n\n📦 File Size :- {humanbytes(get_media_file_size(m))}\n\n🔠 File Captain :- {m.caption}\n\n📥 Fast Download Link :- {stream_link}\n\n🖥 Watch Link :- {watch_link}\n\n❗ Note :- This Link is Permanent and Won't Gets Expired 🚫\n\n©️ <a href=https://t.me/Star_Bots_Tamil><b></b>Star Bots Tamil</a></b></b>"""
+        msg_text ="""<b>Your Link is Generated... ⚡\n\n📁 File Name :- {get_name(log_msg)}\n\n📦 File Size :- {humanbytes(get_media_file_size(m))}\n\n🔠 File Captain :- {m.caption}\n\n📥 Fast Download Link :- {stream_link}\n\n🖥 Watch Link :- {watch_link}\n\n❗ Note :- This Link is Permanent and Won't Gets Expired 🚫\n\n©️ <a href=https://t.me/KRSBots><b></b>KRS Bots</a></b></b>"""
 
         await log_msg.reply_text(text=f"<b>Request By :- <a href='tg://user?id={m.from_user.id}'>{m.from_user.first_name}</a>\nID :- <code>{m.from_user.id}</code>\n📥 Download Link :- {stream_link}</b>", disable_web_page_preview=True, parse_mode=ParseMode.HTML, quote=True)
         await m.reply_text(
@@ -116,7 +116,7 @@ async def channel_receive_handler(bot, broadcast):
         shortened_link = await get_shortlink(stream_link)
 
         await log_msg.reply_text(
-            text=f"<b>Channel Name :- {broadcast.chat.title}\nChannel ID :- <code>{broadcast.chat.id}</code>\nRequest URL :- https://t.me/{(await bot.get_me()).username}?start=Star_Bots_Tamil_{str(log_msg.id)}</b>",
+            text=f"<b>Channel Name :- {broadcast.chat.title}\nChannel ID :- <code>{broadcast.chat.id}</code>\nRequest URL :- https://t.me/{(await bot.get_me()).username}?start=KRSBots_{str(log_msg.id)}</b>",
             quote=True,
             parse_mode=ParseMode.HTML
         )
@@ -124,7 +124,7 @@ async def channel_receive_handler(bot, broadcast):
             chat_id=broadcast.chat.id,
             message_id=broadcast.id,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton("📥 Fast Download Link", url=f"https://t.me/{(await bot.get_me()).username}?start=Star_Bots_Tamil_{str(log_msg.id)}")]])
+                [[InlineKeyboardButton("📥 Fast Download Link", url=f"https://t.me/{(await bot.get_me()).username}?start=KRSBots_{str(log_msg.id)}")]])
         )
     except FloodWait as w:
         print(f"Sleeping for {str(w.x)}s")
