@@ -158,7 +158,17 @@ async def short(link):
     except Exception as error:
         print(f"Ez4short.com Error :- {error}")
 
-   
+    # moneycase.link Shortener
+    try:
+        api_url = "https://moneycase.link/api" 
+        params = {'api': MONEYCASE_API, 'url': link}
+        async with aiohttp.ClientSession() as session:
+            async with session.get(api_url, params=params, raise_for_status=True) as response:
+                data = await response.json()
+                url = data["shortenedUrl"]
+                shorten_urls += f"\n**moneycase.link :- {url}**\n"
+    except Exception as error:
+        print(f"moneycase.link Error :- {error}")
     # Send the text
     try:
         shorten_urls += ""
